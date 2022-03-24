@@ -1,0 +1,68 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="end" (click)="cerrar()" color="ligth">
+      <ion-icon color="dark" name="close-outline" ></ion-icon>
+    </ion-button>      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="text-center">
+        Perfil del usuario {{usuario.name}}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+          <ion-img alt="imagen del usuario">
+
+          </ion-img>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-6">
+          Nombres: {{usuario.name}}
+        </div>
+        <div class="col-6">
+          Apellidos: {{usuario.apellidos}}
+        </div>
+        <div class="col-6">Telefono: {{usuario.telefono}} </div>
+        <div class="col-6">Correo: {{usuario.email}} </div>
+        <div class="col-6">Documento: {{usuario.numero_identificacion}} </div>
+        <div class="col-6">Estado: {{usuario.estado}} </div>
+        <div class="col-6">Tipo de rol: {{usuario.rol}} </div>
+        <div class="col-6"></div>
+        <div class="col-12">
+          <div class="row">
+            <div class="col-3">
+              <ion-img alt="imagen del usuario"></ion-img>
+            </div>
+            <div class="col-3">
+              <ion-img alt="imagen del usuario"></ion-img>
+            </div>
+            <div class="col-3">
+              <ion-img alt="imagen del usuario"></ion-img>
+            </div>
+          </div>
+        </div>
+        <div class="col-4 text-center">
+          <ion-button (click)="activar()">
+            Activar
+          </ion-button>
+        </div>
+        <div class="col-4 text-center">
+          <ion-button (click)="desactivar()">
+            Desactivar
+          </ion-button>
+        </div>
+        <div class="col-4 text-center">
+          <ion-button [routerLink]="['/user/update-user/'+usuario.id]" (click)="cerrar()">
+            Editar
+          </ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

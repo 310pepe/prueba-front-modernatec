@@ -1,0 +1,44 @@
+<ion-toolbar>
+
+  <ion-item id="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large" color="light">Modernatec</ion-title>
+    <ion-label slot="end" class="d-none d-sm-block" color="light">nombre</ion-label>
+    <ion-avatar slot="end">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+
+  </ion-item>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="text-center">Perfil</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <div class="row">
+        <div class="col-6">Nombres:</div>
+        <div class="col-6">Apellidos:</div>
+        <div class="col-6">Telefono:</div>
+        <div class="col-6">Correo:</div>
+        <div class="col-6">Documento:</div>
+        <div class="col-6">Rol</div>
+        <div class="col-6">
+          <ion-button [routerLink]="['/user/changepass']">
+            Cambiar Contraseña
+          </ion-button>
+        </div>
+        <div class="col-6">
+          <ion-button [routerLink]="['/user/update-perfil']">
+            Editar
+          </ion-button>
+        </div>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

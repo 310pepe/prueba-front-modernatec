@@ -1,0 +1,75 @@
+<ion-toolbar>
+
+  <ion-item id="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large" color="light">Modernatec</ion-title>
+    <ion-label slot="end" class="d-none d-sm-block" color="light">nombre</ion-label>
+    <ion-avatar slot="end">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+
+  </ion-item>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="text-center">Cambiar Contraseña</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <form>
+        <div class="row">
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Nombres:</span>
+              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Apellidos:</span>
+              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Telefono:</span>
+              <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Correo:</span>
+              <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Documento:</span>
+              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Rol:</span>
+              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <ion-button [routerLink]="['/user/perfil']">
+              Cancelar
+            </ion-button>
+          </div>
+          <div class="col-6">
+            <ion-button>
+              Guardar
+            </ion-button>
+          </div>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

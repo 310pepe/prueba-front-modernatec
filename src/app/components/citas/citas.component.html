@@ -1,0 +1,49 @@
+<ion-toolbar>
+
+  <ion-item id="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large" color="light">Modernatec</ion-title>
+    <ion-label slot="end" class="d-none d-sm-block" color="light">nombre</ion-label>
+    <ion-avatar slot="end">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+
+  </ion-item>
+</ion-toolbar>
+<ion-content>
+  <div class="row mt-3">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-12 ms-2">
+          <ion-button [routerLink]="['/user/create-cita']">
+            Crear Cita
+          </ion-button>
+        </div>
+      </div>
+    </div>
+    <div class="col-5">
+      <ion-datetime 
+        (ionChange)="cambioFecha($event)"
+      ></ion-datetime>
+    </div>
+    <div class="col-7">
+      <div class="row">
+        <div class="col-12" *ngFor="let cita of dayCitas">
+          <ion-card>
+            <ion-card-content>
+              <p>Nombre: </p>
+              <p>Hora: {{cita.hora}} </p>
+              <p>Codigo: {{cita.codigo_cita}}</p>
+              <ion-button [routerLink]="['/user/update-cita/'+cita.codigo_cita]" >
+                Ver mas
+              </ion-button>
+            </ion-card-content>
+          </ion-card>
+        </div>
+      </div>
+      
+    </div>
+  </div>  
+</ion-content>

@@ -1,0 +1,100 @@
+<ion-toolbar>
+
+  <ion-item id="toolbar">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large" color="light">Modernatec</ion-title>
+    <ion-label slot="end" class="d-none d-sm-block" color="light">nombre</ion-label>
+    <ion-avatar slot="end">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+
+  </ion-item>
+</ion-toolbar>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title class="text-center">
+        Ingrese los datos requeridos
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <form [formGroup]="citaForm" (submit)="crearCita()"> 
+        <div class="row">
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Número de identificación:</span>
+              <input type="text" (keyup)="buscar()" formControlName="numero_identificacion" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Teléfono:</span>
+              <input type="text" formControlName="telefono" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Nombres:</span>
+              <input type="text" formControlName="name" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Apellidos:</span>
+              <input type="text" formControlName="apellidos" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Correo:</span>
+              <input type="text" formControlName="correo_invitado" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Area:</span>
+              <input type="text" formControlName="area" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Correo del solicitante:</span>
+              <input type="text" formControlName="correo_solicitante" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Fecha de la cita:</span>
+              <input type="date" formControlName="fecha" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Hora de la cita:</span>
+              <input type="time" formControlName="hora" class="form-control" [disabled] aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">Código:</span>
+              <input type="text" formControlName="codigo_cita" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+            </div>
+          </div>
+          <div class="col-6 text-center">
+            <ion-button [routerLink]="['/user/citas']">
+              Cancelar
+            </ion-button>
+          </div>
+          <div class="col-6 text-center">
+            <ion-button type="submit">
+              Agendar Cita
+            </ion-button>
+          </div>
+        </div>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

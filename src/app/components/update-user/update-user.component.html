@@ -1,0 +1,114 @@
+<ion-toolbar>  
+  <ion-item>
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title size="large"  color="light">Modernatec</ion-title>
+    <ion-label slot="end" class="d-none d-sm-block" color="light">nombre</ion-label>
+    <ion-avatar slot="end">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+    
+  </ion-item>
+</ion-toolbar>
+<ion-content>
+  <ion-card *ngIf="load">
+    <ion-card-header>
+      <ion-card-title class="text-center">
+        Perfil de <span> {{usuario[0].name}} </span>
+      </ion-card-title>
+      <ion-card-content>
+        <form [formGroup]="userForm" (submit)="actualizar()">
+          <div class="row">
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Nombres:</span>
+                <input type="text" formControlName="name" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Apellidos:</span>
+                <input type="text" formControlName="apellidos" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Número de identificación:</span>
+                <input type="text" formControlName="numero_identificacion" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Telefono:</span>
+                <input type="text" formControlName="telefono" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Correo electrónico:</span>
+                <input type="text" formControlName="email" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Tipo de rol:</span>
+                <select formControlName="rol" class="form-select" aria-label="Default select example">
+                  <option value="1">Registros</option>
+                  <option value="2">Administrador</option>
+                  <option value="3">Seguridad</option>
+                </select>
+                
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Tipo de contrato:</span>
+                <input type="text" formControlName="id_contrato" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Fecha de inico:</span>
+                <input type="text" formControlName="fecha_inicio" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">Fecha de fin:</span>
+                <input type="text" formControlName="fecha_fin" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="row">
+                <div class="col-3">
+                  <ion-img alt="imagen del usuario"></ion-img>
+                </div>
+                <div class="col-3">
+                  <ion-img alt="imagen del usuario"></ion-img>
+                </div>
+                <div class="col-3">
+                  <ion-img alt="imagen del usuario"></ion-img>
+                </div>
+                <div class="col-3">
+                  <ion-icon name="add-outline" size="large"></ion-icon>
+                </div>
+              </div>
+            </div>
+            <div class="col-6 text-center">
+              <ion-button [routerLink]="['/user/admin-regis']">
+                Cancelar
+              </ion-button>
+            </div>
+            <div class="col-6 text-center">
+              <ion-button type="submit" color="secondary">
+                Guardar
+              </ion-button>
+            </div>
+          </div>
+        </form>
+        
+      </ion-card-content>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
