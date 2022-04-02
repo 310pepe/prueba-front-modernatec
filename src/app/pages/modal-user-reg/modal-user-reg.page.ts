@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { UsuariosService } from '../../services/usuarios.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-modal-user-reg',
@@ -13,12 +14,19 @@ export class ModalUserRegPage implements OnInit {
 
   constructor(
     private modalController:ModalController,
-    private userService:UsuariosService
+    private userService:UsuariosService,
+    private router:Router
   ) { }
 
   ngOnInit() {
   }
+
+  cerrarD(){
+    this.modalController.dismiss();
+  }
+
   cerrar(){
+    this.router.navigate([`user/update-user/${this.usuario.id}`])
     this.modalController.dismiss();
   }
   activar(){

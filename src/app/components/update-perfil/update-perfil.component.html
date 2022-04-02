@@ -1,17 +1,4 @@
-<ion-toolbar>
-
-  <ion-item id="toolbar">
-    <ion-buttons slot="start">
-      <ion-menu-button color="light"></ion-menu-button>
-    </ion-buttons>
-    <ion-title size="large" color="light">Modernatec</ion-title>
-    <ion-label slot="end" class="d-none d-sm-block" color="light">nombre</ion-label>
-    <ion-avatar slot="end">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-
-  </ion-item>
-</ion-toolbar>
+<app-menu></app-menu>
 
 <ion-content>
   <ion-card>
@@ -19,43 +6,43 @@
       <ion-card-title class="text-center">Cambiar Contraseña</ion-card-title>
     </ion-card-header>
   
-    <ion-card-content>
-      <form>
+    <ion-card-content *ngIf="load">
+      <form [formGroup]="formulario"  (ngSubmit)="actualizarPerfil()">
         <div class="row">
           <div class="col-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Nombres:</span>
-              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" formControlName="name" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Apellidos:</span>
-              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" formControlName="apellidos" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Telefono:</span>
-              <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" formControlName="telefono" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Correo:</span>
-              <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" formControlName="email" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Documento:</span>
-              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" formControlName="numero_identificacion" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-6">
             <div class="input-group mb-3">
               <span class="input-group-text" id="basic-addon1">Rol:</span>
-              <input type="text" class="form-control" disabled aria-label="Username" aria-describedby="basic-addon1">
+              <input type="text" formControlName="rol" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
             </div>
           </div>
           <div class="col-6">
@@ -64,7 +51,7 @@
             </ion-button>
           </div>
           <div class="col-6">
-            <ion-button>
+            <ion-button type="submit">
               Guardar
             </ion-button>
           </div>

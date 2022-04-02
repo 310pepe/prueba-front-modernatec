@@ -90,4 +90,16 @@ export class AuthService {
   perfil(){
     return this.http.post(`${this.url}/me`,{token:this.userToken});
   }
+
+  forgotPass(data){
+    return this.http.get(`${this.url}/email_password_reset/${data.email}`)
+  }
+
+  codeVerific(data){
+    return this.http.post(`${this.url}/Validacion_code`,data);
+  }
+
+  changePass(data){
+    return this.http.post(`${this.url}/confirm_reset_password`,data);
+  }
 }

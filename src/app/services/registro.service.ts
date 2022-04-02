@@ -33,7 +33,7 @@ export class RegistroService {
   }){
     data.token=this.userToken
     
-    return this.http.post(`${this.url}/export`,data,{observe:'response', responseType:'arraybuffer'})
+    return this.http.post(`${this.url}/export`,data,{responseType:'blob'as 'json'})
   }
 
   subirDb(data){

@@ -15,6 +15,18 @@ const routes: Routes = [
     loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
   },
   {
+    path: 'email-password',
+    loadChildren: () => import('./pages/email-password/email-password.module').then( m => m.EmailPasswordPageModule)
+  },
+  {
+    path: 'codigo-verificacion',
+    loadChildren: () => import('./pages/codigo-verificacion/codigo-verificacion.module').then( m => m.CodigoVerificacionPageModule)
+  },
+  {
+    path: 'new-password',
+    loadChildren: () => import('./pages/new-password/new-password.module').then( m => m.NewPasswordPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'login',
     pathMatch: 'full'

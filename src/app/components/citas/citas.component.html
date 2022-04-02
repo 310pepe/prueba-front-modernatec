@@ -1,23 +1,10 @@
-<ion-toolbar>
-
-  <ion-item id="toolbar">
-    <ion-buttons slot="start">
-      <ion-menu-button color="light"></ion-menu-button>
-    </ion-buttons>
-    <ion-title size="large" color="light">Modernatec</ion-title>
-    <ion-label slot="end" class="d-none d-sm-block" color="light">nombre</ion-label>
-    <ion-avatar slot="end">
-      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-    </ion-avatar>
-
-  </ion-item>
-</ion-toolbar>
+<app-menu></app-menu>
 <ion-content>
   <div class="row mt-3">
     <div class="col-12">
       <div class="row">
         <div class="col-12 ms-2">
-          <ion-button [routerLink]="['/user/create-cita']">
+          <ion-button [routerLink]="['/user/create-cita']" [replaceUrl]="true" >
             Crear Cita
           </ion-button>
         </div>
@@ -36,7 +23,7 @@
               <p>Nombre: </p>
               <p>Hora: {{cita.hora}} </p>
               <p>Codigo: {{cita.codigo_cita}}</p>
-              <ion-button [routerLink]="['/user/update-cita/'+cita.codigo_cita]" >
+              <ion-button [routerLink]="['../update-cita/'+cita.codigo_cita]" [replaceUrl]="true" >
                 Ver mas
               </ion-button>
             </ion-card-content>

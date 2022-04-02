@@ -32,6 +32,7 @@ export class ReportesComponent implements OnInit {
     return this.reporte_form.get('fecha_2').invalid && this.reporte_form.get('fecha_2').touched
   }
 
+  //cargar el formulario
   loadForm(){
     this.reporte_form= this.fb.group(
       {
@@ -41,19 +42,40 @@ export class ReportesComponent implements OnInit {
     )
   }
   
+  //funcion que se ejecuta al dar clic en submit
   generarReporte(){
+    //verficar que todos los campos esten validos
     if (this.reporte_form.invalid){
       return Object.values(this.reporte_form.controls).forEach(control=>{
         control.markAsTouched();
       })
     }
+    //llamado al servicio de descarga de reportes
     this.registroService.descargarReporte(this.reporte_form.value).subscribe(
       res=>{
-        console.log('todo bien');
-        console.log(res);
-        
+        //reseteamos el formulario
+        this.reporte_form.reset();
+        //llamamos a la funcion que descarga el archivo    
+        this.manageExcel(res,'reporte.xlsx');  
       }
     )
+  }
+
+  //funcion que maneja la descarga de archivos
+  manageExcel(res,filename){
+    //constante que tiene el tipo del documento
+    const dataType= res.type;
+    //variable que contendra los datos binarios del archivo
+    const binaryData = [];
+    binaryData.push(res);
+    
+    const filePath = window.URL.createObjectURL(new Blob(binaryData,{type:dataType}) );
+    const donwload = document.createElement('a');
+    donwload.href = filePath;
+    donwload.setAttribute('download',filename);
+    document.body.appendChild(donwload);
+    donwload.click();
+    document.body.removeChild(donwload);
   }
 
 }

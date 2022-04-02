@@ -1,3 +1,16 @@
-<p>
-  home-seg works!
-</p>
+<app-menu></app-menu>
+
+<ion-content>
+  <p>
+    home works
+  </p>
+
+  <video 
+  id="videoRef"
+    #video
+    [srcObject]="currentStram"
+    (loadedmetadata)="(loadedMetaData())"
+    >
+
+  </video>
+</ion-content>

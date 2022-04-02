@@ -20,6 +20,7 @@ import { CitasComponent } from './citas/citas.component';
 import { CreateCitaComponent } from './create-cita/create-cita.component';
 import { UpdateCitaComponent } from './update-cita/update-cita.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HomeSegComponent } from './home-seg/home-seg.component';
 
 
 
@@ -40,7 +41,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     DataBaseComponent,
     CitasComponent,
     CreateCitaComponent,
-    UpdateCitaComponent
+    UpdateCitaComponent,
+    HomeSegComponent
   ],
   imports: [
     CommonModule,
@@ -66,7 +68,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
     DataBaseComponent,
     CitasComponent,
     CreateCitaComponent,
-    UpdateCitaComponent
+    UpdateCitaComponent,
+    HomeSegComponent
   ]
 })
 export class ComponentsModule { }

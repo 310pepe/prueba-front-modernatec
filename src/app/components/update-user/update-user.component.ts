@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsuariosService } from '../../services/usuarios.service';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
@@ -17,7 +17,8 @@ export class UpdateUserComponent implements OnInit {
   constructor(
     private routerAc:ActivatedRoute,
     private userService:UsuariosService,
-    private fb:FormBuilder
+    private fb:FormBuilder,
+    private router:Router
   ) { 
     this.routerAc.params.subscribe(
       (params)=>{
@@ -75,8 +76,7 @@ export class UpdateUserComponent implements OnInit {
 
     this.userService.updateUser(this.usuario[0]).subscribe(
       resp=>{
-        console.log(resp);
-        
+        this.router.navigate(['/user/admin-regis'])
       }
     )
   }

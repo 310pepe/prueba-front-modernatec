@@ -29,7 +29,7 @@ export class CreateCitaComponent implements OnInit {
   //cargar formulario
   loadForm(){
     this.citaForm= this.fb.group({
-      numero_identificacion:[this.usuario?.hi || '' ],
+      numero_identificacion:['' ],
       telefono:[ this.usuario?.telefono || '' ],
       name:[],
       apellidos:[],
